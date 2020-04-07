@@ -1,7 +1,7 @@
-Objective:
-Create a long running program
-Demonstrate signal handling
-Demonstrate program logging
+# Objective:
+# Create a long running program
+# Demonstrate signal handling
+# Demonstrate program logging
 Use exception handling to keep the program running
 Create and structure your own code repository using best practices
 Show that you know how to read a set of requirements and deliver on them, asking for clarification if anything is unclear.
