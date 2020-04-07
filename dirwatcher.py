@@ -2,19 +2,19 @@
 
 __author__ = 'David Stewy with Piero Demo'
 
-import os
-import argparse
-import time
-import datetime
 import logging
+import datetime
+import time
+import argparse
+import os
 logger = logging.getLogger(__file__)
 
 
 def watch_directory(args):
     watching_files = {}
     logger.info('Watching directory: {}, File Ext: {}, Polling INterval: {}. Magic Text: {}'.format(
-            args.path, args.ext, args.interval, args.magic
-            ))
+        args.path, args.ext, args.interval, args.magic
+    ))
     # Keys are the actual filename and the values are there to begin searching
 
     # Look at directory and get a list of files from it.
@@ -65,24 +65,25 @@ def main():
     app_start_time = datetime.datetime.now()
     logger.info(
         '\n'
-        '--------------------------------------------------------------------\n'
-        '   Running {0}\n'
-        '   Started on {1}\n'
-        '--------------------------------------------------------------------\n'
-        .format=(__file__, app_start_time.isoformat())
+        '-------------------------------------------------------------------\n'
+        '    Running {0}\n'
+        '    Started on {1}\n'
+        '-------------------------------------------------------------------\n'
+        .format(__file__, app_start_time.isoformat())
     )
-    parser = create_parser
+    parser = create_parser()
     args = parser.parse_args()
     watch_directory(args)
     uptime = datetime.datetime.now()-app_start_time
     logger.info(
         '\n'
-        '--------------------------------------------------------------------\n'
-        '   Stopped {0}\n'
-        '   Uptime was {1}\n'
-        '--------------------------------------------------------------------\n'
-        .format(__file__, str(uptime)
+        '-------------------------------------------------------------------\n'
+        '   Completed {0}\n'
+        '   Duration was {1}\n'
+        '-------------------------------------------------------------------\n'
+        .format(__file__, str(uptime))
     )
+
 
 if __name__ == "__main__":
     main()
